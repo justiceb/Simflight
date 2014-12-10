@@ -120,8 +120,8 @@ Wdot= (Q*U-P*V+g*cphi*ctheta+(Fazprime+Ftz)/mass)*alphadotfactor;
 alphadot=(Uas*Wdot-Was*Udot)/(Uas*Uas+Was*Was);  % << change made here for steady winds
 [La,Ma,Na,Croll,Cpitch,Cyaw]=aeromoment(x,u,constant,alpha,beta,Vt,qbar,alphadot,CX,CY,CZprime);
 
-Pdot=(c1*R+c2*P)*Q      +c3*(La+Lt)+c4*(Na+Nt); 
-Qdot=c5*P*R-c6*(P*P-R*R)+c7*(Ma+Mt);            
+Pdot=(c1*R+c2*P)*Q      +c3*(La+Lt)+c4*(Na+Nt);
+Qdot=c5*P*R-c6*(P*P-R*R)+c7*(Ma+Mt);
 Rdot=(c8*P-c2*R)*Q      +c4*(La+Lt)+c9*(Na+Nt);
 
 % Kinematic eqations

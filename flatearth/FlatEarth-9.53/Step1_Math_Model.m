@@ -20,9 +20,7 @@ clear all; close all; format short g
 
 % Get the matrix of basic constants. Use the basic constants to compute the
 % array called constant
-%Basic_Constants_MPX5;   %            <<<<< AIRCRAFT SPECIFIC DATA FILE
-%Basic_Constants_T12
-Basic_Constants_T12b
+Basic_Constants_MPX5;   %            <<<<< AIRCRAFT SPECIFIC DATA FILE
 %Basic_Constants_PA_28_161_Warrior
 %Basic_Constants_PA_28_161_Improved_FLT_TEST  % Use this one for Piper Warrior
 

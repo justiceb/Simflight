@@ -18,7 +18,7 @@ figure(1)
 subplot(311)
 plot(taircraft,yaircraft(:,5))
 v=axis
-%axis([v(1),v(2),-.1,.1]) % Manually set plot scale to prevent tiny wiggles
+axis([v(1),v(2),-.1,.1]) % Manually set plot scale to prevent tiny wiggles
 xlabel('time (sec)')
 ylabel('Q (rad/sec)')
 title(input)
@@ -26,14 +26,14 @@ title(input)
 subplot(312)
 plot(taircraft,yaircraft(:,8))
 v=axis
-%axis([v(1),v(2),-.1,.1]) % Manually set plot scale to prevent tiny wiggles
+axis([v(1),v(2),-.1,.1]) % Manually set plot scale to prevent tiny wiggles
 xlabel('time (sec)')
 ylabel('theta (rad)')
 
 subplot(313)
 plot(taircraft,yaircraft(:,14))
 v=axis
-%axis([v(1),v(2),0,.2]) % Manually set plot scale to prevent tiny wiggles
+axis([v(1),v(2),0,.2]) % Manually set plot scale to prevent tiny wiggles
 xlabel('time (sec)')
 ylabel('alpha (rad)')
 
@@ -92,7 +92,7 @@ figure(5)
 subplot(311)
 plot(taircraft,yaircraft(:,13))
 v=axis
-%axis([v(1),v(2),round(yaircraft(1,13)-5),round(yaircraft(1,13)+5)]) % Manually set plot scale to prevent tiny wiggles
+axis([v(1),v(2),round(yaircraft(1,13)-5),round(yaircraft(1,13)+5)]) % Manually set plot scale to prevent tiny wiggles
 xlabel('time (sec)')
 ylabel('Speed (f/s)')
 title(input)
@@ -100,7 +100,7 @@ title(input)
 subplot(312)
 plot(taircraft,yaircraft(:,16))
 v=axis
-%axis([v(1),v(2),-.1,.1]) % Manually set plot scale to prevent tiny wiggles
+axis([v(1),v(2),-.1,.1]) % Manually set plot scale to prevent tiny wiggles
 xlabel('time (sec)')
 ylabel('Flight Path Angle (gamma) (rad)')
 

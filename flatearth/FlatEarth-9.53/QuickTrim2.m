@@ -60,7 +60,7 @@ Vzas=0;
 Xdot=Vxas+Vwx;
 Ydot=Vyas+Vwy;
 Zdot=Vzas+Vwz;
-phi=0 ;
+phi=0;
 theta=alpha;
 psi=0;
 % get body axis components of inertial velocity

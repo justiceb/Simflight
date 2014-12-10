@@ -5,7 +5,7 @@
 %************************************************************************
 % OBJECTIVES: 1. Script to linearize the aircraft system assuming the nonlinear
 %                aircraft model in SIMULINK model FlatEarth_MATLAB7.mdl.
-%             2. Perform  a linear simulation for the same conditions as
+%             2. Perform a linear simulation for the same conditions as
 %                used in the SIMULINK nonlinear simulation.
 %             3. Overplot the nonlinear simulation results and the linear simulation 
 %                results in order to verify the accuracy of the linearization.
@@ -156,9 +156,9 @@ legend('linear sim','nonlinear sim')
 title(input)
 
 subplot(312)
-plot(t,(y(:,7)+YR(7))*57.2957795,'-',timevector,yaircraft(:,7)*57.2957795,':')
+plot(t,y(:,7)+YR(7),'-',timevector,yaircraft(:,7),':')
 xlabel('time (sec)')
-ylabel('phi (deg)')
+ylabel('phi (rad)')
 legend('linear sim','nonlinear sim')
 
 subplot(313)
@@ -167,35 +167,7 @@ xlabel('time (sec)')
 ylabel('Y (ft)')
 legend('linear sim','nonlinear sim')
 
-figure(13)
-subplot(211)
-plot(t,(y(:,5)+YR(5))*57.2957795 ,'-',timevector,yaircraft(:,5)*57.2957795 ,'-r')
-xlabel('time (sec)')
-ylabel('Q: Pitch rate (deg/sec)')
-legend('linear sim','nonlinear sim')
-subplot(212)
-plot(timevector,(deltaE - deltaE(1))*57.2957795,'-')
-xlabel('time (sec)')
-ylabel('elevator deflection from trim (deg)')
-legend('INPUT --> elevator control')
 
-figure(14)
-subplot(211)
-plot(t,(y(:,9)+YR(9))*57.2957795 ,timevector,yaircraft(:,9)*57.2957795 ,t,(y(:,7)+YR(7))*57.2957795 ,timevector,yaircraft(:,7)*57.2957795 )
-xlabel('time (sec)')
-ylabel('angle (degrees)')
-legend('heading - linear sim','heading - nonlinear sim','roll - linear sim','roll - nonlinear sim')
-subplot(212)
-plot(timevector,(deltaA - deltaA(1))*57.2957795,'-')
-xlabel('time (sec)')
-ylabel('aileron deflection from trim (deg)')
-legend('INPUT --> aileron control')
-
-figure(100)
-plot(t,(y(:,7)+YR(7))*57.2957795,'-')
-hold all
-xlabel('time (sec)')
-ylabel('phi (deg)')
 
 %%%%%%
 % OBJECTIVE: 4. Split the 12th order system into the smaller lateral-directional subsystem.

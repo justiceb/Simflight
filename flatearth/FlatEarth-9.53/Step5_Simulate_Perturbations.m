@@ -32,14 +32,14 @@ echo on
 %
 %Perturbations to the controls.
 %
-deltaEpertRAD=0/57.29577 % Use this for elevator step
+deltaEpertRAD=1/57.29577 % Use this for elevator step
 %deltaEpertRAD=0          % Use this for step in other controller
-deltaApertRAD=-1/57.29577 % Use this for aileron step
+deltaApertRAD=1/57.29577 % Use this for aileron step
 %deltaApertRAD=0;         % Use this for step in other controller
-deltaRpertRAD=0/57.29577 % Use this for rudder step
+deltaRpertRAD=1/57.29577 % Use this for rudder step
 %deltaRpertRAD=0;        % Use this for step in other controller
-deltabhppert=0;%0.05        % Use this for horsepower step
+deltabhppert=0.05        % Use this for horsepower step
 %deltabhppert=0;        % Use this for step in other controller
-Tstop=25          % Stop time for simulation (sec)
+Tstop=100          % Stop time for simulation (sec)
 sim('FlatEarth_MATLAB7')
 echo off
