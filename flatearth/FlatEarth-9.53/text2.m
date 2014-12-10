@@ -1,0 +1,1 @@
+function text2(x,y,ttext)%text2(x,y,ttext)% Locate text on the current figure using % fractional window coordinates% e.g., text2(.1,.9,ttext) locates text 10% to the right%        and 90% from the bottom of the figure.z=axis;xmin=z(1);xmax=z(2);ymin=z(3);ymax=z(4);text(x*(xmax-xmin)+xmin,y*(ymax-ymin)+ymin,ttext)

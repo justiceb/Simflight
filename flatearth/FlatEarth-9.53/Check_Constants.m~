@@ -1,0 +1,51 @@
+% Check_Constants.m     Version 9.51 1/25/2010
+%
+% OBJECTIVE: Perform a BELIEVABILITY CHECK of the array called constant
+% INPUTS: The array called constant.
+% OUTPUTS: Text in the Matlab command window.
+%
+
+disp(' '); disp(' ')
+disp(' '); disp('BELIEVABILITY CHECK of the array called constant');
+string1=['For ',aircraft];
+disp(string1); disp(' ')
+xx=1:67;
+NameScript; % Get constant names and comments.
+for i=1:67
+	string1=['constant(',num2str(xx(i)),')= ',num2str(constant(i))];
+	disp(string1)
+	string2=['disp(name',num2str(i),')'];
+	eval(string2)
+	if eval(['isempty(comment',num2str(i),')'])
+	else
+		string3=['disp(comment',num2str(i),')'];
+		eval(string3)
+	end
+	if i==56
+        StaticMargin=-constant(46)/constant(29);
+        Xbarref=constant(56);
+        stringA=['Arbitrary Ref. Point,       Xbarref= ',num2str(Xbarref),' (fraction of chord)'];
+        stringC=['Static Margin     (Xbarac-Xbarref) = ',num2str(StaticMargin),' (fraction of chord)'];
+        disp(stringA); disp(stringC); 
+        string4=['Typically 0.05 to 0.50 of the reference chord.'];
+		disp(string4)
+        disp('NOTE: static margin above is relative the the arbitrary ref point, NOT the c.g.')
+    end
+    if i==57
+        % Compute static margin in fraction of MAC.
+        Xbarcg=constant(57); 
+        Xbarref=constant(56);
+        Cm_alpha=constant(46);
+        CL_alpha=constant(29);
+        Xbarac=-Cm_alpha/CL_alpha+Xbarref;
+        StaticMargin=Xbarac-Xbarcg;
+        stringA=['C.G. location,               Xbarcg= ',num2str(Xbarcg),' (fraction of chord)'];
+        stringB=['Aerodynamic center location, Xbarac= ',num2str(Xbarac),' (fraction of chord)'];
+        stringC=['Static Margin      (Xbarac-Xbarcg) = ',num2str(StaticMargin),' (fraction of chord)'];
+        disp(stringA); disp(stringB); disp(stringC); 
+        string4=['Typically 0.05 to 0.50 of the reference chord.'];
+		disp(string4)
+        disp('NOTE: static margin above is relative the the c.g. This is the static margin that will be reflected in the subsequent simulations')
+	end
+	disp(' ')
+end

@@ -1,0 +1,23 @@
+% Step0_ReadMe.m    Version 9.2.1 1/8/07
+%
+echo on
+disp(' ')
+% These MALAB scripts are designed to analyze and simulate arbitrary 
+% rigid aircraft over the flat earth. A vehicle description file 
+% called Basic_Constants is included allowing analysis 
+% of a particular UAV.
+%  
+% It is important that these MATLAB scripts (.m files) be run in order.
+% 
+echo off
+%Step1_Abbreviated
+Step1_Math_Model
+Step2_Trim
+%Step3_Simulink_SimMATLAB7
+%Step4_Plot_Nonlinear_Sim  %(optional step)
+%Step5_Linearize_MATLAB7
+%Step6_Longitudinal_Design
+% Step7_Lateral_Design %(can be run after Step5)
+%
+%
+echo off
